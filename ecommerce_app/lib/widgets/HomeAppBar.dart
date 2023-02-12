@@ -34,7 +34,7 @@ class HomeAppBar extends StatelessWidget {
           badges.Badge(
             showBadge: true,
             badgeContent: Text(
-              '3',
+              '7',
               style: TextStyle(
                 color: Colors.white
               ),

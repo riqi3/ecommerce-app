@@ -7,8 +7,9 @@ class ProductGrid extends StatelessWidget {
   const ProductGrid({super.key,
     required this.name,
   required this.image,
+  required this.price,
   });
-  final String name, image;
+  final String name, image, price;
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +80,7 @@ class ProductGrid extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('\$55.00',
+                    Text(price,
                     style: TextStyle(
                       fontSize: 4+(fontSize/2),
                       fontWeight: FontWeight.bold,

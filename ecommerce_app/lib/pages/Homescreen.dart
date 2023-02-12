@@ -60,11 +60,15 @@ class HomeScreen extends StatelessWidget {
                         (index) => ProductGrid(
                               name: products[index]['name'],
                               image: products[index]['image'],
+                              price: products[index]['price'],
                             )),
                   ),
                 ],
               ),
             ),
+          ),
+          SizedBox(
+            height: 50,
           ),
         ],
       ),
