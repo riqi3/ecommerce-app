@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:badges/badges.dart' as badges;
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
@@ -21,12 +22,34 @@ class HomeAppBar extends StatelessWidget {
               left: defaultPadding - 4,
             ),
             child: Text(
-              'DP Shop0',
-              style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.bold,
-              color: mainColor,),
+              'DP Shop',
+              style: TextStyle(
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color: mainColor,
+              ),
             ),
           ),
           Spacer(),
+          badges.Badge(
+            showBadge: true,
+            badgeContent: Text(
+              '3',
+              style: TextStyle(
+                color: Colors.white
+              ),
+            ),
+            child: InkWell(
+              onTap: () {
+                print('s');
+              },
+              child: Icon(
+                Icons.shopping_bag_outlined,
+                size: iconSize,
+                color: mainColor,
+                ),
+            ),
+          ),
         ],
       ),
     );
