@@ -26,10 +26,15 @@ class Categories extends StatelessWidget {
               children: [
                 Image.asset(
                   image,
-                  width: categoryBoxSize/2,
-                  height: categoryBoxSize/2,
+                  width: imageSize/2,
+                  height: imageSize/2,
                   ),
-                  Text(name),
+                  Text(name,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 2+(fontSize/2),
+                    color: mainColor,
+                  ),),
               ],
             ),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'pages/CartScreen.dart';
 import 'pages/Homescreen.dart';
 
 
@@ -14,7 +15,8 @@ class EcommerceApp extends StatelessWidget{
         scaffoldBackgroundColor: Colors.white,
       ),
       routes: {
-        '/':(context) => Homescreen()
+        '/':(context) => HomeScreen(),
+        'cartPage':(context) => CartScreen()
       },
     );
   }
