@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
+import 'package:ecommerce_app/data.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/Categories.dart';
@@ -42,7 +43,17 @@ class Homescreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Categories(),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                        products.length,
+                        (index) => Categories(
+                          name: products[index]['name'],
+                              image: products[index]['image'],
+                            )),
+                  ),
+                ),
               ],
             ),
           ),
@@ -51,4 +62,3 @@ class Homescreen extends StatelessWidget {
     );
   }
 }
-

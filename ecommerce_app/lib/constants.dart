@@ -9,3 +9,4 @@ const double defaultMargin= 16.0;
 const double iconSize = 30.0;
 const double borderRadius = 30;
 
+const double categoryBoxSize = 80;
