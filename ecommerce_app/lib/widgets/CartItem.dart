@@ -1,4 +1,5 @@
-import 'package:ecommerce_app/constants.dart';
+import '../constants.dart';
+import '../widgets/Counter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -74,60 +75,7 @@ class CartItem extends StatelessWidget {
                   Icons.delete,
                   color: Colors.red,
                 ),
-                Row(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(defaultPadding - 20),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(borderRadius - 10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 1,
-                            blurRadius: 10,
-                          ),
-                        ],
-                      ),
-                      child: Icon(
-                        CupertinoIcons.plus,
-                        size: 3 + (iconSize / 2),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: defaultPadding / 2, right: defaultPadding / 2),
-                      child: SizedBox(
-                        width: 20,
-                        child: Text(
-                          '01',
-                          style: TextStyle(
-                              fontSize: 4 + (fontSize / 2),
-                              fontWeight: FontWeight.bold,
-                              color: mainColor),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(defaultPadding - 20),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(borderRadius - 10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 1,
-                            blurRadius: 10,
-                          ),
-                        ],
-                      ),
-                      child: Icon(
-                        CupertinoIcons.minus,
-                        size: 3 + (iconSize / 2),
-                      ),
-                    ),
-                  ],
-                ),
+                Counter(),
               ],
             ),
           ),
@@ -136,3 +84,4 @@ class CartItem extends StatelessWidget {
     );
   }
 }
+
