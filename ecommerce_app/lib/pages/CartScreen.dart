@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../data.dart';
 import '../widgets/CartAppBar.dart';
+import '../widgets/CartBottomNav.dart';
 import '../widgets/CartItem.dart';
 
 class CartScreen extends StatelessWidget {
@@ -14,19 +15,18 @@ class CartScreen extends StatelessWidget {
       body: ListView(
         children: [
           CartAppBar(),
-          SingleChildScrollView(
-            child: Container(
-              height: MediaQuery.of(context).size.height,
-              padding: EdgeInsets.only(top: defaultPadding - 8),
-              decoration: BoxDecoration(
-                color: bgColor,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(borderRadius),
-                  topRight: Radius.circular(borderRadius),
-                ),
+          Container(
+            padding: EdgeInsets.only(top: defaultPadding - 8),
+            decoration: BoxDecoration(
+              color: bgColor,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(borderRadius),
+                topRight: Radius.circular(borderRadius),
               ),
-              child: SingleChildScrollView(
-                child: Column(
+            ),
+            child: Column(
+              children: [
+                Column(
                   children: List.generate(
                     products.length,
                     (index) => CartItem(
@@ -36,11 +36,41 @@ class CartScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
+                Container(
+                  padding: EdgeInsets.all(defaultPadding - 14),
+                  margin: EdgeInsets.symmetric(
+                      vertical: defaultMargin - 4, horizontal: defaultPadding),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(borderRadius / 3),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: mainColor,
+                          borderRadius: BorderRadius.circular(borderRadius / 3),
+                        ),
+                        child: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: (defaultPadding/2)-2),
+                        child: Text(
+                          'Add Coupon Code',
+                          style: TextStyle(color: mainColor, fontWeight: FontWeight.bold, fontSize: (fontSize/2)+4),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ],
       ),
+      bottomNavigationBar: CartBottomNav(),
     );
   }
 }

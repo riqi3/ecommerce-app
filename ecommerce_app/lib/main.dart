@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'pages/CartScreen.dart';
 import 'pages/Homescreen.dart';
+import 'pages/ItemScreen.dart';
 
 
 void main() => runApp(EcommerceApp());
@@ -16,7 +17,8 @@ class EcommerceApp extends StatelessWidget{
       ),
       routes: {
         '/':(context) => HomeScreen(),
-        'cartPage':(context) => CartScreen()
+        'cartScreen':(context) => CartScreen(),
+        'itemScreen':(context) => ItemScreen(),
       },
     );
   }

@@ -45,7 +45,9 @@ class ProductGrid extends StatelessWidget {
                 ],
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, 'itemScreen');
+                },
                 child: Container(
                   margin: EdgeInsets.all(defaultMargin - 6),
                   child: Image.asset(image),
